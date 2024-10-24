@@ -1,0 +1,93 @@
+body, div, h1, h2, ul, li, i, a, p, h3, footer {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body {
+    background-image: url(https://sitecore-cd.shangri-la.com/-/media/Shangri-La/boracay_boracayresort/about/2023_SLBO_Explore-Boracay.jp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #faf7f7;
+}
+
+body a {
+    color: white;
+     text-decoration: none;
+}
+
+body ul li {
+       list-style:none;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 55px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#center_content {
+      padding-left: 60px;
+}
+
+.main_content {
+    position: relative;
+    width: 64%;
+    height: 100%;
+    Float: center 
+}
+
+.about h3 {
+    padding-top: 110px;
+}
+
+.about div {
+    height: 100%;
+    width: 90%;
+    border-radius:0.5em;
+    background-color: #121212;
+}
+
+.about div p {
+    font-size: 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+.div {
+
+    height: 100%;
+    width: 90%;
+    border-radius:0.5em;
+    background-color: #121212;
+}
+
+nav {
+  font-family:"Rubik", sans-serif;
+  color: black;
+  height: 100px;
+  margin: 0px;
+  display:flex;
+  justify-content:space-around;
+}
+
+.button {
+  background-color:#FFFFFF;
+  margin:20px;
+  height:20px;
+  width:250px;
+  padding:20px;
+  text-align:center;
+}
+
+
+
