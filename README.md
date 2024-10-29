@@ -201,7 +201,7 @@ http://localhost:8080
 
 You should now see your static website up and running, served by the Docker container using Nginx.
 
-C:\Users\MLC\Documents\WhatsApp Image 2024-10-24 at 18.38.08_1a705beb.jpg
+
 
 
 
