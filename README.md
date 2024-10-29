@@ -1,87 +1,66 @@
-# Project1 
-Step-by-Step Guide to Dockerize a Static Website Using Nginx
 
-This guide will walk you through the process of installing Docker, creating a simple static website (HTML/CSS), and deploying it using Docker with Nginx.
+## Step 1: Install Docker
 
-Step 1: Install Docker
-1. Update the apt package index:
+### 1. Update the apt package index:
 
- sudo apt-get update
+sudo apt-get update
 
-2. Install Docker Using this command:
+### 2. Install Docker Using this command:
 
- sudo apt-get install docker.io
+sudo apt-get install docker.io
 
-3. Verify that Docker is installed:
+### 3. Verify that Docker is installed:
 
- docker --version
+docker --version
 
 Docker is now installed. You can run containers and build Docker images.
 
-Step 2: Create Project Folder for Static Website
+## Step 2: Create Project Folder for Static Website
 
-1. Create a new directory where you will store your project files (HTML, CSS, and Dockerfile):
+### 1. Create a new directory where you will store your project files (HTML, CSS, and Dockerfile):
 
- mkdir static-website
- cd static-website
+mkdir static-website cd static-website
 
-Step 3: Create index.html
-Create an index.html file for your static website. This will be the content served by Nginx.
+## Step 3: Create index.html Create an index.html file for your static website. This will be the content served by Nginx.
 
-1. Create and open the index.html file:
+### 1. Create and open the index.html file:
 
-  vim index.html
-  
-2. Add the following basic HTML content to index.html:
+vim index.html
 
-   <!DOCTYPE html> 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/235004aab8.js" crossorigin="anonymous"> </script>
-    <title> Destination 2: Boracay </title>
-</head>
-<body>
+### 2. Add the following basic HTML content to index.html:
 
-
-        </div>
-    </div>
-    <div class="main_content">
-      <div class="about" id="center_content">
-        <h3> Project 1 </h3>
-        <p> Welcome To My Static Website </p>
-        <div>
-          <p>
-         This is a simple, fast-loading, and lightweight static website. Explore the features, services, and information below.We specialize in providing quick and efficient solutions for small websites. This static site is built using HTML, CSS, and hosted in a Docker container, demonstrating how easy it is to get a website up and running.    </p>
-        </div>
-
-      </div>
-    </ul>
+<script src="https://kit.fontawesome.com/235004aab8.js" crossorigin="anonymous"> </script> <title> Destination 2: Boracay </title>
+    
+</div>
+<div class="main_content">
+  <div class="about" id="center_content">
+    <h3> Project 1 </h3>
+    <p> Welcome To My Static Website </p>
+    <div>
+      <p>
+     This is a simple, fast-loading, and lightweight static website. Explore the features, services, and information below.We specialize in providing quick and efficient solutions for small websites. This static site is built using HTML, CSS, and hosted in a Docker container, demonstrating how easy it is to get a website up and running.    </p>
     </div>
 
-    </div>                                                                
-    <nav>
-          <a href="https://www.geeksforgeeks.org" class="button"> HOME </a>
-          <a href="https://www.geeksforgeeks.org/devops-tutorial/?ref=ghm" class="button"> ABOUT DEVOPS </a>
-          <a href="https://www.geeksforgeeks.org/introduction-to-docker/?ref=lbp" class="button"> DOCKER </a>
-           <a href="https://www.geeksforgeeks.org/what-is-dockerfile-syntax/?ref=lbp" class="button"> DOCKERFILE </a>
-          <a href="https://www.geeksforgeeks.org/introduction-to-docker/?ref=lbp#install-docker-on-ubuntu" class="button"> DOCKER INSTALLATION </a> </ul>
-        </nav>
-</body>
-</html>
+  </div>
+</ul>
+<div>  
+<div>                                                            
+<nav>
+      <a href="https://www.geeksforgeeks.org" class="button"> HOME </a>
+      <a href="https://www.geeksforgeeks.org/devops-tutorial/?ref=ghm" class="button"> ABOUT DEVOPS </a>
+      <a href="https://www.geeksforgeeks.org/introduction-to-docker/?ref=lbp" class="button"> DOCKER </a>
+       <a href="https://www.geeksforgeeks.org/what-is-dockerfile-syntax/?ref=lbp" class="button"> DOCKERFILE </a>
+      <a href="https://www.geeksforgeeks.org/introduction-to-docker/?ref=lbp#install-docker-on-ubuntu" class="button"> DOCKER INSTALLATION </a> </ul>
+    </nav>
 
-3. Save and exit (Esc, :wq , Enter to exit vim).
+### 3. Save and exit (Esc, :wq , Enter to exit vim).
 
-Step 4: Create style.css for Styling
+## Step 4: Create style.css for Styling
 
 You can also add some simple styles to your website by creating a style.css file.
 
-1. Create and open the style.css file:
+### 1. Create and open the style.css file:
+
 
 body, div, h1, h2, ul, li, i, a, p, h3, footer {
     padding: 0;
@@ -172,50 +151,51 @@ nav {
   width:250px;
   padding:20px;
   text-align:center;
-}              
+}
 
-3. Save and exit (Esc, :wq , Enter to exit vim).
+### 3. Save and exit (Esc, :wq , Enter to exit vim).
 
-Step 5: Create a Dockerfile
-A Dockerfile is needed to define how to containerize the static website using Nginx.
+## Step 5: Create a Dockerfile A Dockerfile is needed to define how to containerize the static website using Nginx.
 
-1. Create and open the Dockerfile:
+### 1. Create and open the Dockerfile:
 
- vim Dockerfile
+vim Dockerfile
 
-2. Add the following content to the Dockerfile:
+### 2. Add the following content to the Dockerfile:
 
-   FROM nginx:latest
-   COPY . /usr/share/nginx/html
-   Expose 80
+FROM nginx:latest 
 
-Step 6: Build the Docker Image
-Now that you have your project files and Dockerfile ready, you need to build a Docker image.
+COPY . /usr/share/nginx/html
 
-1. Build the Docker image:
+Expose 80
 
-   docker build -t static-website .
+## Step 6: Build the Docker Image Now that you have your project files and Dockerfile ready, you need to build a Docker image.
 
-2. To check Docker Images:
+### 1. Build the Docker image:
 
-   docker images
+docker build -t static-website .
 
-Step 7: Run the Docker Container
-After building the Docker image, you can now run the container and access the website in a browser.
 
-1. Run the container:
+### 2. To check Docker Images:
 
-   docker run -d -p 80:80 static-website
+docker images
 
-2. Verify that the container is running:
+## Step 7: Run the Docker Container After building the Docker image, you can now run the container and access the website in a browser.
 
-  docker ps
+### 1. Run the container:
 
-Step 8: Access the Website
+docker run -d -p 80:80 static-website
 
-Open your browser and navigate to:
+### 2. Verify that the container is running:
+
+docker ps
+
+## Step 8: Access the Website
+
+### 1. Open your browser and navigate to:
 
 http://localhost:8080
 
 You should now see your static website up and running, served by the Docker container using Nginx.
 
+C:\Users\MLC\Documents\WhatsApp Image 2024-10-24 at 18.38.08_1a705beb.jpg
